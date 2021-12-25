@@ -1,6 +1,6 @@
 let inputs = document.getElementsByClassName("score-tracker")
 for (let x = 0; x < inputs.length; x++) {
-    inputs[x].addEventListener("change", update_variables);
+    inputs[x].addEventListener("change", workout_total_points);
 }
 var cog = 0;
 var compass = 0;
@@ -10,6 +10,7 @@ var wild = 0;
  *Works out score for each indivdual science type based on user input
  */
 function workout_indivdual_score(x, y, z) {
+
     let indivdual_score = (x * x) + (y * y) + (z * z);
     return indivdual_score
 }
@@ -17,12 +18,14 @@ function workout_indivdual_score(x, y, z) {
  * Works out score for sets of science
  */
 function workout_set_points(x, y, z) {
-    if (x < y && z < z) {
+    if (x <= y && z <= z && x > 0) {
         set_points = x * 7;
     } else if (y < x && y < z) {
         set_points = y * 7;
-    } else {
+    } else if (z < x && z < y) {
         set_points = z * 7;
+    } else {
+        set_points = 0;
     }
     return set_points
 }
@@ -30,8 +33,9 @@ function workout_set_points(x, y, z) {
  * works out total points
  */
 function workout_total_points() {
-    total_points = workout_set_points() + workout_indivdual_score()
-    console.log(total_points)
+    update_variables()
+    workout_wild()
+    total_points = workout_set_points(cog, compass, tablet) + workout_indivdual_score(cog, compass, tablet)
     update_points(total_points)
 
 }
@@ -49,30 +53,29 @@ function update_variables() {
     compass = parseInt(scores[1].value);
     tablet = parseInt(scores[2].value);
     wild = parseInt(scores[3].value);
-    workout_wild()
+
 }
 
-// function workout_wild() {
-//     if (cog >= compass && cog >= tablet) {
-//         points = ((cog + wild) * cog + wild) + (compass * compass) + (tablet * tablet)
-//         console.log("cog" + points)
-//     } else if (compass > tablet && compass > cog) {
-//         points = ((compass + wild) * compass + wild) + (tablet * tablet) + (cog * cog)
-//         console.log("compass" + points)
-//     } else if (tablet > compass && tablet > cog) {
-//         points = ((tablet + wild) * tablet + wild) + (compass * compass) + (cog * cog)
-//         console.log("tablet" + points)
-//     }
+function workout_wild() {
+    let cog_wild = 0;
+    let compass_wild = 0;
+    let tablet_wild = 0;
 
-//     if (cog < compass && cog < tablet) {
+    for (let x = 1; x <= wild; x++) {
+        console.log("loop " + x)
+        cog_wild = workout_set_points(cog + 1, compass, tablet) + workout_indivdual_score(cog + 1, compass, tablet)
+        compass_wild = workout_set_points(cog, compass + 1, tablet) + workout_indivdual_score(cog, compass + 1, tablet)
+        tablet_wild = workout_set_points(cog, compass, tablet + 1) + workout_indivdual_score(cog, compass, tablet + 1)
+        if (cog_wild > compass_wild && cog_wild > tablet_wild) {
+            cog++
+        } else if (compass_wild > cog_wild && compass_wild > tablet_wild) {
+            compass++
+        } else {
+            tablet++
+        }
+
+    }
 
 
-//         console.log("cog" + points)
-//     } else if (compass < tablet && compass < cog) {
 
-//         console.log("compass" + points)
-//     } else if (tablet < compass && tablet < cog) {
-
-
-//     }
-// }
+}
