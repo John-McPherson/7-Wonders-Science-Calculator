@@ -3,3 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* intially styling for body */
+
+body {
+    text-align: center;
+    font-family: "antiquarian", sans-serif;
+
+}
