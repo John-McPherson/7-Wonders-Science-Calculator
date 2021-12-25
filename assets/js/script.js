@@ -16,16 +16,15 @@ function workout_indivdual_score(x, y, z) {
 /**
  * Works out score for sets of science
  */
-function workout_set_points() {
-    let basic = document.getElementsByClassName("basic")
-    let sets = 7;
-    for (let x = 0; x < basic.length; x++) {
-        if (basic[x].value < sets) {
-            sets = basic[x].value
-        }
+function workout_set_points(x, y, z) {
+    if (x < y && z < z) {
+        set_points = x * 7;
+    } else if (y < x && y < z) {
+        set_points = y * 7;
+    } else {
+        set_points = z * 7;
     }
-    points = sets * 7;
-    return points
+    return set_points
 }
 /**
  * works out total points
