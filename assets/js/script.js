@@ -73,7 +73,4 @@ function workout_wild() {
         }
 
     }
-
-
-
 }
