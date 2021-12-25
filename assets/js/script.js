@@ -15,10 +15,11 @@ function workout_indivdual_score() {
  * Works out score for sets of science
  */
 function workout_set_points() {
+    let basic = document.getElementsByClassName("basic")
     let sets = 7;
-    for (let x = 0; x < inputs.length; x++) {
-        if (inputs[x].value < sets) {
-            sets = inputs[x].value
+    for (let x = 0; x < basic.length; x++) {
+        if (basic[x].value < sets) {
+            sets = basic[x].value
             console.log("updating sets..." + sets)
         }
 
