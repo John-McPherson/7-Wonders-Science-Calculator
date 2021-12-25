@@ -9,19 +9,31 @@
 body {
     text-align: center;
     font-family: "antiquarian", sans-serif;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-content: center;
 
 }
 
 /* style for heading and score */
+header {
+    height: 25vh;
+    align-self: center;
+}
+
+.score {
+    height: 25vh;
+}
 
 h1 {
-    font-size: 500%;
-    padding: 1rem;
+    font-size: 300%;
+
 }
 
 h2 {
     font-size: 600%;
-    padding: 2rem;
+
 }
 
 /* style for score area */
@@ -29,6 +41,7 @@ h2 {
 .input-area {
     display: flex;
     flex-flow: row;
+    height: 50vh;
 }
 
 .input-area>div {
@@ -37,4 +50,17 @@ h2 {
     display: flex;
     flex-flow: column;
     padding: 2rem;
+    justify-content: center;
+    align-content: center;
+}
+
+.score-tracker-container>input,
+label {
+    font-size: 200%;
+    text-align: center;
+}
+
+input {
+    /* width: 25%; */
+    text-align: center;
 }
