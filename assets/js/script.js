@@ -33,9 +33,13 @@ function workout_set_points() {
  * works out total points
  */
 function workout_total_points() {
-    let total_sets = workout_set_points()
-    console.log("set points " + total_sets)
-    let total_indivdual = workout_indivdual_score()
-    console.log("indivdual points " + total_indivdual)
+    total_points = workout_set_points() + workout_indivdual_score()
+    console.log(total_points)
+    update_points(total_points)
 
+}
+
+function update_points(points) {
+    score = document.getElementsByTagName("h2")
+    score[0].innerHTML = `${points}`
 }
