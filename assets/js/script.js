@@ -18,9 +18,9 @@ function workout_indivdual_score(x, y, z) {
  * Works out score for sets of science
  */
 function workout_set_points(x, y, z) {
-    if (x <= y && z <= z && x > 0) {
+    if (x <= y && x <= z && x > 0) {
         set_points = x * 7;
-    } else if (y < x && y < z) {
+    } else if (y < x && y <= z) {
         set_points = y * 7;
     } else if (z < x && z < y) {
         set_points = z * 7;
@@ -37,6 +37,8 @@ function workout_total_points() {
     workout_wild()
     total_points = workout_set_points(cog, compass, tablet) + workout_indivdual_score(cog, compass, tablet)
     update_points(total_points)
+    console.log("cog " + cog + " compass " + compass + " tablet " + tablet)
+    console.log("set " + workout_set_points(cog, compass, tablet) + " indi " + workout_indivdual_score(cog, compass, tablet))
 
 }
 /**
@@ -62,7 +64,6 @@ function workout_wild() {
     let tablet_wild = 0;
 
     for (let x = 1; x <= wild; x++) {
-        console.log("loop " + x)
         cog_wild = workout_set_points(cog + 1, compass, tablet) + workout_indivdual_score(cog + 1, compass, tablet)
         compass_wild = workout_set_points(cog, compass + 1, tablet) + workout_indivdual_score(cog, compass + 1, tablet)
         tablet_wild = workout_set_points(cog, compass, tablet + 1) + workout_indivdual_score(cog, compass, tablet + 1)
