@@ -9,6 +9,7 @@
 body {
     text-align: center;
     font-family: "antiquarian", sans-serif;
+
 }
 
 /* style for heading and score */
@@ -20,5 +21,20 @@ h1 {
 
 h2 {
     font-size: 600%;
+    padding: 2rem;
+}
+
+/* style for score area */
+
+.input-area {
+    display: flex;
+    flex-flow: row;
+}
+
+.input-area>div {
+    text-align: center;
+    width: 25%;
+    display: flex;
+    flex-flow: column;
     padding: 2rem;
 }
