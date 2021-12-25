@@ -9,5 +9,16 @@
 body {
     text-align: center;
     font-family: "antiquarian", sans-serif;
+}
 
+/* style for heading and score */
+
+h1 {
+    font-size: 500%;
+    padding: 1rem;
+}
+
+h2 {
+    font-size: 600%;
+    padding: 2rem;
 }
