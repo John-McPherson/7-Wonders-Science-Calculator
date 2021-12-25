@@ -1,8 +1,13 @@
 let inputs = document.getElementsByClassName("score-tracker")
 for (let x = 0; x < inputs.length; x++) {
-    inputs[x].addEventListener("change", test);
+    inputs[x].addEventListener("change", workout_score);
 }
 
-function test() {
-    console.log("test")
+/**
+ *Works out total score on user input
+ */
+function workout_score() {
+    let score = this.value;
+    score = score * score;
+    console.log(this.id + score);
 }
