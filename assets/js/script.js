@@ -1,8 +1,11 @@
 let inputs = document.getElementsByClassName("score-tracker")
 for (let x = 0; x < inputs.length; x++) {
-    inputs[x].addEventListener("change", workout_total_points);
+    inputs[x].addEventListener("change", update_variables);
 }
-
+var cog = 0;
+var compass = 0;
+var tablet = 0;
+var wild = 0;
 /**
  *Works out score for each indivdual science type based on user input
  */
@@ -44,4 +47,12 @@ function workout_total_points() {
 function update_points(points) {
     score = document.getElementsByTagName("h2")
     score[0].innerHTML = `${points}`
+}
+
+function update_variables() {
+    let scores = document.getElementsByClassName("score-tracker");
+    cog = scores[0].value;
+    compass = scores[1].value;
+    tablet = scores[2].value;
+    wild = scores[3].value;
 }
