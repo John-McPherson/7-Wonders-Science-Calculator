@@ -37,9 +37,6 @@ function workout_total_points() {
     workout_wild()
     total_points = workout_set_points(cog, compass, tablet) + workout_indivdual_score(cog, compass, tablet)
     update_points(total_points)
-    console.log("cog " + cog + " compass " + compass + " tablet " + tablet)
-    console.log("set " + workout_set_points(cog, compass, tablet) + " indi " + workout_indivdual_score(cog, compass, tablet))
-
 }
 /**
  * updates the DOM with the correct points.
