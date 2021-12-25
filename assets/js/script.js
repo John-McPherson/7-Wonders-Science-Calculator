@@ -38,7 +38,9 @@ function workout_total_points() {
     update_points(total_points)
 
 }
-
+/**
+ * updates the DOM with the correct points.
+ */
 function update_points(points) {
     score = document.getElementsByTagName("h2")
     score[0].innerHTML = `${points}`
