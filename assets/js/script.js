@@ -10,7 +10,9 @@ var wild = 0;
  *Works out score for each indivdual science type based on user input
  */
 function workout_indivdual_score(x, y, z) {
-
+    x = (x == true) ? x : 0;
+    y = (y == true) ? y : 0;
+    z = (z == true) ? z : 0;
     let indivdual_score = (x * x) + (y * y) + (z * z);
     return indivdual_score
 }
