@@ -14,7 +14,7 @@ body {
     justify-content: center;
     align-content: center;
     background-image: url("../imgs/background.jpg");
-    background-size: 100%;
+    background-size: 120vw;
 }
 
 /* style for heading and score */
@@ -47,11 +47,11 @@ h2 {
 }
 
 .input-area>div {
+
     text-align: center;
     width: 25%;
     display: flex;
     flex-flow: column;
-    padding: 2rem;
     justify-content: center;
     align-content: center;
 }
@@ -63,6 +63,19 @@ label {
 }
 
 input {
-    /* width: 25%; */
+    margin-right: auto;
+    margin-left: auto;
+    font-family: "antiquarian", sans-serif;
+    font-size: 400%;
+    width: 30%;
     text-align: center;
+    justify-self: center;
+    border-style: hidden;
+    background-color: transparent;
+    height: 25%;
+
+}
+
+input[type="number"] {
+    font-size: 500%;
 }
