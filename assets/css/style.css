@@ -15,8 +15,6 @@ body {
     align-content: center;
     background-image: url("../imgs/background.jpg");
     background-size: 100%;
-
-
 }
 
 /* style for heading and score */
@@ -31,6 +29,7 @@ header {
 
 h1 {
     font-size: 300%;
+    padding-top: 5%;
 
 }
 
