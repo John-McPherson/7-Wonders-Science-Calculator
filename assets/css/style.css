@@ -13,6 +13,9 @@ body {
     flex-flow: column;
     justify-content: center;
     align-content: center;
+    background-image: url("../imgs/background.jpg");
+    background-size: 100%;
+
 
 }
 
