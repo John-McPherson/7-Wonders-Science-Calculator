@@ -70,27 +70,3 @@ button {
     justify-content: center;
     align-content: center;
 }
-
-.score-tracker-container>input,
-label {
-    font-size: 200%;
-    text-align: center;
-}
-
-input {
-    margin-right: auto;
-    margin-left: auto;
-    font-family: "antiquarian", sans-serif;
-    font-size: 400%;
-    width: 30%;
-    text-align: center;
-    justify-self: center;
-    border-style: hidden;
-    background-color: transparent;
-
-
-}
-
-input[type="number"] {
-    font-size: 500%;
-}
