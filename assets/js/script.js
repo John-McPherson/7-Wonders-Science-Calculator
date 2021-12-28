@@ -1,7 +1,3 @@
-let inputs = document.getElementsByClassName("score-tracker")
-for (let x = 0; x < inputs.length; x++) {
-    inputs[x].addEventListener("change", workout_total_points);
-}
 let plus = document.getElementsByClassName("plus")
 for (let x = 0; x < plus.length; x++) {
     plus[x].addEventListener("click", increment_score);
