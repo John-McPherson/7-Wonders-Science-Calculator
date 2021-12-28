@@ -10,6 +10,10 @@ var cog = 0;
 var compass = 0;
 var tablet = 0;
 var wild = 0;
+var cog_wild = 0;
+var compass_wild = 0;
+var tablet_wild = 0;
+
 /**
  * increments score when plus button is pressed
  */
@@ -103,20 +107,20 @@ function update_points(points) {
  * works out best option for wild science cards
  */
 function workout_wild() {
-    let cog_wild = 0;
-    let compass_wild = 0;
-    let tablet_wild = 0;
+    let cog_wild_total = 0;
+    let compass_wild_total = 0;
+    let tablet_wild_total = 0;
 
     for (let x = 1; x <= wild; x++) {
-        cog_wild = workout_set_points(cog + 1, compass, tablet) + workout_indivdual_score(cog + 1, compass, tablet)
-        compass_wild = workout_set_points(cog, compass + 1, tablet) + workout_indivdual_score(cog, compass + 1, tablet)
-        tablet_wild = workout_set_points(cog, compass, tablet + 1) + workout_indivdual_score(cog, compass, tablet + 1)
-        if (cog_wild > compass_wild && cog_wild > tablet_wild) {
-            cog++
-        } else if (compass_wild > cog_wild && compass_wild > tablet_wild) {
-            compass++
+        cog_wild_total = workout_set_points(cog + cog_wild + 1, compass + compass_wild, tablet + tablet_wild) + workout_indivdual_score(cog + cog_wild + 1, compass, tablet + tablet_wild)
+        compass_wild_total = workout_set_points(cog + cog_wild, compass + compass_wild + 1, tablet) + workout_indivdual_score(cog + cog_wild, compass + compass_wild + 1, tablet + tablet_wild)
+        tablet_wild_total = workout_set_points(cog + cog_wild, compass + compass_wild, tablet + 1) + workout_indivdual_score(cog + cog_wild, compass + compass_wild, tablet + tablet_wild + 1)
+        if (cog_wild_total > compass_wild_total && cog_wild_total > tablet_wild_total) {
+            cog_wild++
+        } else if (compass_wild_total > cog_wild_total && compass_wild_total > tablet_wild_total) {
+            compass_wild++
         } else {
-            tablet++
+            tablet_wild++
         }
 
     }
