@@ -104,14 +104,6 @@ function update_points(points) {
     score[0].innerHTML = `${points}`
 }
 
-function update_variables() {
-    let scores = document.getElementsByClassName("score-tracker");
-    cog = parseInt(scores[0].value);
-    compass = parseInt(scores[1].value);
-    tablet = parseInt(scores[2].value);
-    wild = parseInt(scores[3].value);
-
-}
 
 function workout_wild() {
     let cog_wild = 0;
