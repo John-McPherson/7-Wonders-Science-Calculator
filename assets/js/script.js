@@ -34,13 +34,21 @@ function increment_score() {
  */
 function decrease_score() {
     if (this.id === "cog-minus") {
-        cog--
+        if (cog > 0) {
+            cog--
+        }
     } else if (this.id === "compass-minus") {
-        compass--
+        if (compass > 0) {
+            compass--
+        }
     } else if (this.id === "tablet-minus") {
-        tablet--
+        if (tablet > 0) {
+            tablet--
+        }
     } else {
-        wild--
+        if (wild > 0) {
+            wild--
+        }
     }
     update_science_count()
 }
