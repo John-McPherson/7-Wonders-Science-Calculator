@@ -40,6 +40,19 @@ h2 {
 
 /* style for score area */
 
+p {
+    font-size: 200%;
+}
+
+.points {
+    font-size: 500%
+}
+
+button {
+    width: 2em;
+    height: 2em;
+}
+
 .input-area {
     display: flex;
     flex-flow: row;
