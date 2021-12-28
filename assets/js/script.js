@@ -93,7 +93,7 @@ function workout_set_points(x, y, z) {
  */
 function workout_total_points() {
     workout_wild()
-    total_points = workout_set_points(cog, compass, tablet) + workout_indivdual_score(cog, compass, tablet)
+    total_points = workout_set_points(cog + cog_wild, compass + compass_wild, tablet + tablet_wild) + workout_indivdual_score(cog + cog_wild, compass + compass_wild, tablet + tablet_wild)
     update_points(total_points)
 }
 /**
