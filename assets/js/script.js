@@ -26,6 +26,21 @@ function increment_score() {
     update_science_count()
 }
 /**
+ * decreases score when minus button is pressed
+ */
+function decrease_score() {
+    if (this.id === "cog-minus") {
+        cog--
+    } else if (this.id === "compass-minus") {
+        compass--
+    } else if (this.id === "tablet-minus") {
+        tablet--
+    } else {
+        wild--
+    }
+    update_science_count()
+}
+/**
  * updates the count of science whenever a button is pressed.
  */
 function update_science_count() {
