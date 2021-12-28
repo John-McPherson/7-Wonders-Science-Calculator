@@ -6,6 +6,10 @@ let minus = document.getElementsByClassName("minus");
 for (let x = 0; x < minus.length; x++) {
     minus[x].addEventListener("click", decrease_score);
 }
+let clear = document.getElementsByClassName("clear");
+for (let x = 0; x < clear.length; x++) {
+    clear[x].addEventListener("click", clear_scores);
+}
 var cog = 0;
 var compass = 0;
 var tablet = 0;
@@ -13,6 +17,15 @@ var wild = 0;
 var cog_wild = 0;
 var compass_wild = 0;
 var tablet_wild = 0;
+
+function clear_scores() {
+    cog = 0;
+    compass = 0;
+    tablet = 0;
+    wild = 0;
+    update_science_count();
+
+}
 
 /**
  * increments score when plus button is pressed
