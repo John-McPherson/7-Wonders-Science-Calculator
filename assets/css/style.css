@@ -53,6 +53,7 @@ p {
 button {
     width: 3em;
     height: 3em;
+    margin: 1em;
 }
 
 .input-area {
