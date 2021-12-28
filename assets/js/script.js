@@ -2,10 +2,21 @@ let inputs = document.getElementsByClassName("score-tracker")
 for (let x = 0; x < inputs.length; x++) {
     inputs[x].addEventListener("change", workout_total_points);
 }
+let plus = document.getElementsByClassName("plus")
+for (let x = 0; x < plus.length; x++) {
+    plus[x].addEventListener("click", increment_score);
+}
 var cog = 0;
 var compass = 0;
 var tablet = 0;
 var wild = 0;
+
+function increment_score() {
+    if (this.id === "cog-plus") {
+        cog++
+    }
+}
+
 /**
  *Works out score for each indivdual science type based on user input
  */
