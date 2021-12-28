@@ -95,6 +95,7 @@ function workout_total_points() {
     workout_wild()
     total_points = workout_set_points(cog + cog_wild, compass + compass_wild, tablet + tablet_wild) + workout_indivdual_score(cog + cog_wild, compass + compass_wild, tablet + tablet_wild)
     update_points(total_points)
+    reset_wilds()
 }
 /**
  * updates the DOM with the correct points.
@@ -124,4 +125,10 @@ function workout_wild() {
         }
 
     }
+}
+
+function reset_wilds() {
+    cog_wild = 0;
+    compass_wild = 0;
+    tablet_wild = 0;
 }
