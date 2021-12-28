@@ -10,13 +10,22 @@ var cog = 0;
 var compass = 0;
 var tablet = 0;
 var wild = 0;
-
+/**
+ * increments score when plus button is pressed
+ */
 function increment_score() {
     if (this.id === "cog-plus") {
         cog++
     }
+    update_science_count()
 }
-
+/**
+ * updates the count of science whenever a button is pressed.
+ */
+function update_science_count() {
+    let cog_score = document.getElementById("cog-score");
+    cog_score.innerHTML = `${cog}`
+}
 /**
  *Works out score for each indivdual science type based on user input
  */
