@@ -6,6 +6,10 @@ let plus = document.getElementsByClassName("plus")
 for (let x = 0; x < plus.length; x++) {
     plus[x].addEventListener("click", increment_score);
 }
+let minus = document.getElementsByClassName("minus")
+for (let x = 0; x < minus.length; x++) {
+    minus[x].addEventListener("click", decrease_score);
+}
 var cog = 0;
 var compass = 0;
 var tablet = 0;
