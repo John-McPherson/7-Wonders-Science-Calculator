@@ -17,12 +17,16 @@ body {
 
 /* style for heading and score */
 header {
-    height: 25vh;
+    height: 20vh;
     align-self: center;
 }
 
 .score {
-    height: 25vh;
+    height: 20vh;
+}
+
+.input-area {
+    height: 60vh;
 }
 
 h1 {
@@ -47,8 +51,8 @@ p {
 }
 
 button {
-    width: 2em;
-    height: 2em;
+    width: 3em;
+    height: 3em;
 }
 
 .input-area {
