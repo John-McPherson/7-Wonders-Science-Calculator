@@ -1,8 +1,8 @@
-let plus = document.getElementsByClassName("plus")
+let plus = document.getElementsByClassName("plus");
 for (let x = 0; x < plus.length; x++) {
     plus[x].addEventListener("click", increment_score);
 }
-let minus = document.getElementsByClassName("minus")
+let minus = document.getElementsByClassName("minus");
 for (let x = 0; x < minus.length; x++) {
     minus[x].addEventListener("click", decrease_score);
 }
@@ -19,15 +19,15 @@ var tablet_wild = 0;
  */
 function increment_score() {
     if (this.id === "cog-plus") {
-        cog++
+        cog++;
     } else if (this.id === "compass-plus") {
-        compass++
+        compass++;
     } else if (this.id === "tablet-plus") {
-        tablet++
+        tablet++;
     } else {
-        wild++
+        wild++;
     }
-    update_science_count()
+    update_science_count();
 }
 /**
  * decreases score when minus button is pressed
@@ -35,48 +35,49 @@ function increment_score() {
 function decrease_score() {
     if (this.id === "cog-minus") {
         if (cog > 0) {
-            cog--
+            cog--;
         }
     } else if (this.id === "compass-minus") {
         if (compass > 0) {
-            compass--
+            compass--;
         }
     } else if (this.id === "tablet-minus") {
         if (tablet > 0) {
-            tablet--
+            tablet--;
         }
     } else {
         if (wild > 0) {
-            wild--
+            wild--;
         }
     }
-    update_science_count()
+    update_science_count();
 }
 /**
  * updates the count of science whenever a button is pressed.
  */
 function update_science_count() {
     let cog_score = document.getElementById("cog-score");
-    cog_score.innerHTML = `${cog}`
+    cog_score.innerHTML = `${cog}`;
     let compass_score = document.getElementById("compass-score");
-    compass_score.innerHTML = `${compass}`
+    compass_score.innerHTML = `${compass}`;
     let tablet_score = document.getElementById("tablet-score");
-    tablet_score.innerHTML = `${tablet}`
+    tablet_score.innerHTML = `${tablet}`;
     let wild_score = document.getElementById("wild-score");
-    wild_score.innerHTML = `${wild}`
-    workout_total_points()
+    wild_score.innerHTML = `${wild}`;
+    workout_total_points();
 }
 /**
  *Works out score for each indivdual science type based on user input
  */
 function workout_indivdual_score(x, y, z) {
     let indivdual_score = (x * x) + (y * y) + (z * z);
-    return indivdual_score
+    return indivdual_score;
 }
 /**
  * Works out score for sets of science
  */
 function workout_set_points(x, y, z) {
+    let set_points = 0;
     if (x <= y && x <= z && x > 0) {
         set_points = x * 7;
     } else if (y < x && y <= z) {
@@ -86,23 +87,23 @@ function workout_set_points(x, y, z) {
     } else {
         set_points = 0;
     }
-    return set_points
+    return set_points;
 }
 /**
  * works out total points
  */
 function workout_total_points() {
-    workout_wild()
-    total_points = workout_set_points(cog + cog_wild, compass + compass_wild, tablet + tablet_wild) + workout_indivdual_score(cog + cog_wild, compass + compass_wild, tablet + tablet_wild)
-    update_points(total_points)
-    reset_wilds()
+    workout_wild();
+    let total_points = workout_set_points(cog + cog_wild, compass + compass_wild, tablet + tablet_wild) + workout_indivdual_score(cog + cog_wild, compass + compass_wild, tablet + tablet_wild);
+    update_points(total_points);
+    reset_wilds();
 }
 /**
  * updates the DOM with the correct points.
  */
 function update_points(points) {
-    score = document.getElementsByTagName("h2")
-    score[0].innerHTML = `${points}`
+    let score = document.getElementsByTagName("h2");
+    score[0].innerHTML = `${points}`;
 }
 /**
  * works out best option for wild science cards
@@ -113,15 +114,15 @@ function workout_wild() {
     let tablet_wild_total = 0;
 
     for (let x = 1; x <= wild; x++) {
-        cog_wild_total = workout_set_points(cog + cog_wild + 1, compass + compass_wild, tablet + tablet_wild) + workout_indivdual_score(cog + cog_wild + 1, compass, tablet + tablet_wild)
-        compass_wild_total = workout_set_points(cog + cog_wild, compass + compass_wild + 1, tablet) + workout_indivdual_score(cog + cog_wild, compass + compass_wild + 1, tablet + tablet_wild)
-        tablet_wild_total = workout_set_points(cog + cog_wild, compass + compass_wild, tablet + 1) + workout_indivdual_score(cog + cog_wild, compass + compass_wild, tablet + tablet_wild + 1)
+        cog_wild_total = workout_set_points(cog + cog_wild + 1, compass + compass_wild, tablet + tablet_wild) + workout_indivdual_score(cog + cog_wild + 1, compass, tablet + tablet_wild);
+        compass_wild_total = workout_set_points(cog + cog_wild, compass + compass_wild + 1, tablet) + workout_indivdual_score(cog + cog_wild, compass + compass_wild + 1, tablet + tablet_wild);
+        tablet_wild_total = workout_set_points(cog + cog_wild, compass + compass_wild, tablet + 1) + workout_indivdual_score(cog + cog_wild, compass + compass_wild, tablet + tablet_wild + 1);
         if (cog_wild_total > compass_wild_total && cog_wild_total > tablet_wild_total) {
-            cog_wild++
+            cog_wild++;
         } else if (compass_wild_total > cog_wild_total && compass_wild_total > tablet_wild_total) {
-            compass_wild++
+            compass_wild++;
         } else {
-            tablet_wild++
+            tablet_wild++;
         }
 
     }

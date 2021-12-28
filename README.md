@@ -6,6 +6,7 @@ A quick and simple project designed to speed up the process of working out each 
 * [Features](#features)
     * [Total Score](#total-score) 
     * [Wild Cards](#wild-cards) 
+* [Testing](#testing)
 
 ## **Features**
 ### **Toal Score**
@@ -13,5 +14,7 @@ A quick and simple project designed to speed up the process of working out each 
 
 ### **Wild Cards**
 * The application should work out the best option when using wild cards. 
+
+## **Testing**
 
 
