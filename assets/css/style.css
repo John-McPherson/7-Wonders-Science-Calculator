@@ -71,3 +71,26 @@ button {
     justify-content: center;
     align-content: center;
 }
+
+@media screen and (orientation: portrait) {
+
+    .input-area>div {
+        width: 50%;
+    }
+
+    .input-area {
+        flex-flow: row wrap;
+    }
+
+    header {
+        height: 15vh;
+    }
+
+    .score {
+        height: 15vh;
+    }
+
+    .input-area {
+        height: 70vh;
+    }
+}
