@@ -16,6 +16,12 @@ var wild = 0;
 function increment_score() {
     if (this.id === "cog-plus") {
         cog++
+    } else if (this.id === "compass-plus") {
+        compass++
+    } else if (this.id === "tablet-plus") {
+        tablet++
+    } else {
+        wild++
     }
     update_science_count()
 }
@@ -25,6 +31,12 @@ function increment_score() {
 function update_science_count() {
     let cog_score = document.getElementById("cog-score");
     cog_score.innerHTML = `${cog}`
+    let compass_score = document.getElementById("compass-score");
+    compass_score.innerHTML = `${compass}`
+    let tablet_score = document.getElementById("tablet-score");
+    tablet_score.innerHTML = `${tablet}`
+    let wild_score = document.getElementById("wild-score");
+    wild_score.innerHTML = `${wild}`
     workout_total_points()
 }
 /**
