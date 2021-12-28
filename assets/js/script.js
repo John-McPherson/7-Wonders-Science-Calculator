@@ -99,8 +99,9 @@ function update_points(points) {
     score = document.getElementsByTagName("h2")
     score[0].innerHTML = `${points}`
 }
-
-
+/**
+ * works out best option for wild science cards
+ */
 function workout_wild() {
     let cog_wild = 0;
     let compass_wild = 0;
