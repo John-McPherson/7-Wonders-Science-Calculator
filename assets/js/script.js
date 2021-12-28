@@ -133,3 +133,15 @@ function reset_wilds() {
     compass_wild = 0;
     tablet_wild = 0;
 }
+
+function wilds_array(wild) {
+    let wilds = [0, 0, 0];
+    for (let x = 0; wild > x; x++) {
+        if (x > 2) {
+            wilds[x - (Math.floor(x / 3) * 3)]++;
+        } else {
+            wilds[x]++;
+        }
+    }
+    return (wilds);
+}
