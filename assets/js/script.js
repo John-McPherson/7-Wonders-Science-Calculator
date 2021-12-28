@@ -25,6 +25,7 @@ function increment_score() {
 function update_science_count() {
     let cog_score = document.getElementById("cog-score");
     cog_score.innerHTML = `${cog}`
+    workout_total_points()
 }
 /**
  *Works out score for each indivdual science type based on user input
@@ -52,7 +53,6 @@ function workout_set_points(x, y, z) {
  * works out total points
  */
 function workout_total_points() {
-    update_variables()
     workout_wild()
     total_points = workout_set_points(cog, compass, tablet) + workout_indivdual_score(cog, compass, tablet)
     update_points(total_points)
