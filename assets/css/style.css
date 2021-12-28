@@ -17,7 +17,7 @@ body {
 
 /* style for heading and score */
 header {
-    height: 20vh;
+    height: 15vh;
     align-self: center;
 }
 
@@ -52,8 +52,14 @@ p {
 
 button {
     width: 3em;
-    height: 3em;
+    height: 2em;
     margin: 1em;
+    font-family: "antiquarian", sans-serif;
+    font-size: 100%;
+}
+
+.clear {
+    font-size: 125%;
 }
 
 .input-area {
@@ -87,10 +93,10 @@ button {
     }
 
     .score {
-        height: 15vh;
+        height: 10vh;
     }
 
     .input-area {
-        height: 70vh;
+        height: 65vh;
     }
 }
