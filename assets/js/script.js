@@ -109,6 +109,17 @@ function update_points(points) {
  * works out best option for wild science cards
  */
 function workout_wild() {
+    let incremented = wilds_incremented(wilds_array(wild))
+    reset_wilds()
+    let singular = workout_wild_singular()
+    if (incremented > singular) {
+        reset_wilds();
+        wilds_incremented(wilds_array(wild));
+    }
+}
+
+
+function workout_wild_singular() {
     let cog_wild_total = 0;
     let compass_wild_total = 0;
     let tablet_wild_total = 0;
@@ -126,6 +137,7 @@ function workout_wild() {
         }
 
     }
+    return workout_set_points(cog + cog_wild, compass + compass_wild, tablet + tablet_wild) + workout_indivdual_score(cog + cog_wild, compass + compass_wild, tablet + tablet_wild);
 }
 
 function reset_wilds() {
@@ -134,14 +146,38 @@ function reset_wilds() {
     tablet_wild = 0;
 }
 
-function wilds_array(wild) {
+function wilds_array(num) {
     let wilds = [0, 0, 0];
-    for (let x = 0; wild > x; x++) {
+    for (let x = 0; num > x; x++) {
         if (x > 2) {
             wilds[x - (Math.floor(x / 3) * 3)]++;
         } else {
             wilds[x]++;
         }
     }
-    return (wilds);
+    return wilds;
+}
+
+function wilds_incremented(x) {
+    let indexes = [0, 1, 2];
+    for (let z = 0; z < wild / 3; z++) {
+        indexes.push(0, 1, 2);
+    }
+    let total_points = workout_set_points(cog + x[indexes[0]], compass + x[indexes[1]], tablet + x[indexes[2]]) + workout_indivdual_score(cog + x[indexes[0]], compass + x[indexes[1]], tablet + x[indexes[2]]);
+    cog_wild = x[indexes[0]];
+    compass_wild = x[indexes[1]];
+    tablet_wild = x[indexes[2]];
+    for (let y = 0; y < x.length; y++) {
+        console.log(total_points)
+        let test = workout_set_points(cog + x[indexes[0 + y]], compass + x[indexes[1 + y]], tablet + x[indexes[2 + y]]) + workout_indivdual_score(cog + x[indexes[0 + y]], compass + x[indexes[1 + y]], tablet + x[indexes[2 + y]]);
+        console.log(test)
+        if (total_points < test) {
+            total_points = test;
+            cog_wild = x[indexes[0 + y]];
+            compass_wild = x[indexes[1 + y]];
+            tablet_wild = x[indexes[2 + y]];
+        }
+    }
+
+    return total_points;
 }
