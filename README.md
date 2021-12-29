@@ -10,10 +10,13 @@ A quick and simple project designed to speed up the process of working out each 
 
 ## **Features**
 ### **Toal Score**
-* The application should display the total score in an easy to read format.  
+* The application should display the total score in an easy to read format. And it will be automatically calculated whenever the user updates an input.  
 
 ### **Wild Cards**
 * The application should work out the best option when using wild cards. 
+
+### **Clear Button**
+* The application has the option to clear all user input with one button press. That way users can quickly. and easily check multiple players scores. 
 
 ## **Testing**
 * [Preformance](#preformance)
@@ -37,6 +40,8 @@ And finally I ran it through the JSHint validatior and that also came back with 
 ![JSHint](./assets/imgs/readme/jshint-validator.png)
 
 ### **Manual Testing**
+
+
 
 
 
