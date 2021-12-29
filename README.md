@@ -10,6 +10,7 @@ You can see the deployed site [here](https://john-mcpherson.github.io/7-Wonders-
 * [Features](#features)
     * [Total Score](#total-score) 
     * [Wild Cards](#wild-cards) 
+* [Technologies Used](technologies-used)
 * [Testing](#testing)
 * [Deployment](#deployment)
 * [Credits](#credits)
@@ -23,6 +24,17 @@ You can see the deployed site [here](https://john-mcpherson.github.io/7-Wonders-
 
 ### **Clear Button**
 * The application has the option to clear all user input with one button press. That way users can quickly. and easily check multiple players scores. 
+
+## **Technologies Used**
+
+### **Languages** 
+
+* HTML5
+* CSS3
+* JavaScript
+
+### **Version Control** 
+* Git
 
 ## **Testing**
 * [Preformance](#preformance)
