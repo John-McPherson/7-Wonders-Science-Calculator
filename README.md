@@ -61,8 +61,21 @@ The site is deployed via github pages. To deploy the site:
 4. Select the source branch that you want to publish. 
 5. Click save. This will generate a url for the site.  
 
+# **Credits**
 
+### **Content**
 
+All code was written by John McPherson. 
+
+The font for the project is [Antiquarian](https://fonts.adobe.com/fonts/antiquarian#fonts-section) from Adobe Fonts and it was licensed through my Adobe Creative Cloud Subscription. 
+
+### **Acknowledgements** 
+
+* My friend Ben Orton for helping test the project and finding a major bug. 
+* [Code Institute](https://codeinstitute.net/) for giving me the skills through their tutorials to create this site. 
+* [Free Code Camp](https://www.freecodecamp.org/) for introducing me to coding. 
+* [JavaScript30]( https://javascript30.com/) for providing additional challenges to help me develop my JavaScript tools. 
+* [Css-tricks.com](https://css-tricks.com/) and [W3Schools](https://www.w3schools.com/) for helping me whenever I got stuck. 
 
 
 
