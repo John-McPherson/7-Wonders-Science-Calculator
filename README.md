@@ -25,7 +25,7 @@ You can see the deployed site [here](https://john-mcpherson.github.io/7-Wonders-
 ## **Testing**
 * [Preformance](#preformance)
 * [Validation](#validation)
-* [Manual Testing](#manual-testing)
+* [Function Testing](#function-testing)
 
 ### **Preformance**
 
@@ -43,7 +43,13 @@ Then I ran it through the W3 CSS checker and that also came back with no issues;
 And finally I ran it through the JSHint validatior and that also came back with no issues; 
 ![JSHint](./assets/imgs/readme/jshint-validator.png)
 
-### **Manual Testing**
+### **Function Testing**
+
+As part of the testing I manually tested all inputs to ensure that the logic of the code was working as intended. I manually checked inputs to ensure the output matched what was expected. During my intial tests I discoverd an issue with the way the wild input was being calculated. This was fixed in commit [c3353e9](https://github.com/John-McPherson/7-Wonders-Science-Calculator/blob/1f9e59e7efd799d67f4d9464f7123ca672f5c780/assets/js/script.js). 
+
+Once the bug had been resolved I reran my tests and everything worked as intended. 
+
+
 
 
 
